@@ -1,0 +1,151 @@
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #111;
+  padding: 40px 20px;
+}
+
+/* Container for the board view */
+.board-container {
+  width: 100%;
+  padding: 40px 60px;
+  box-sizing: border-box;
+}
+
+/* Board Title */
+.board-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #000; /* Black heading */
+}
+
+/* Board Description */
+.board-description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Masonry Grid - 6 columns */
+.masonry-board {
+  column-count: 6;
+  column-gap: 20px;
+  max-width: 100%;
+}
+
+@media (max-width: 1427px) {
+  .masonry-board {
+    column-count: 5;
+  }
+}
+@media (max-width: 1200px) {
+  .masonry-board {
+    column-count: 4;
+  }
+}
+@media (max-width: 1000px) {
+  .masonry-board {
+    column-count: 3;
+  }
+}
+@media (max-width: 768px) {
+  .masonry-board {
+    column-count: 2;
+  }
+}
+@media (max-width: 480px) {
+  .masonry-board {
+    column-count: 1;
+  }
+}
+
+.unsave-form {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: none;
+}
+
+.pin-card:hover .unsave-form {
+  display: block;
+}
+
+.unsave-btn {
+  background-color: rgba(255, 0, 0, 0.9);
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background-color 0.2s ease;
+}
+
+.unsave-btn:hover {
+  background-color: rgb(220, 0, 0);
+}
+
+
+/* Pin Card */
+.pin-card {
+  display: block;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+
+.pin-card:hover {
+  transform: scale(1.03);
+}
+
+/* Pin Image */
+.pin-card img {
+  width: 100%;
+  display: block;
+  border-radius: 16px 16px 0 0;
+}
+
+/* Caption under image */
+.caption {
+  padding: 12px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fafafa;
+  border-top: 1px solid #eee;
+}
+
+/* Empty message */
+.no-posts {
+  font-size: 1.1rem;
+  color: #888;
+  margin-top: 30px;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #fff;
+  background-color: #E60023;
+  padding: 10px 20px;
+  border-radius: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+  background-color: #c3001c;
+}

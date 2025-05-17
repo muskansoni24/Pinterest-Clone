@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Feed</title>
+  <link rel="stylesheet" href="/stylesheets/feed.css" />
+</head>
+<body>
+  <div class="container">
+    <% posts.forEach(function(post) { %>
+      <div class="box">
+        <a href="/images/uploads/<%= post.image %>">
+          <img src="/images/uploads/<%= post.image %>" alt="image">
+        </a>
+        <div class="caption"><%= post.postText || "No caption" %></div>
+
+        <!-- Save Button -->
+        <div class="save-btn">
+          <button class="save-button" onclick="showBoards('<%= post.id %>')">Save</button>
+        </div>
+
+        <!-- User's Boards Modal -->
+        <div class="board-modal" id="board-modal-<%= post.id %>">
+          <div class="modal-content">
+            <h4>Select a board to save</h4>
+            <ul class="boards-list">
+              <% userBoards.forEach(function(board) { %>
+                <li onclick="saveToBoard('<%= post.id %>', '<%= board.id %>')"><%= board.boardName %></li>
+              <% }) %>
+            </ul>
+            <button class="close-modal" onclick="closeBoardModal('<%= post.id %>')">Close</button>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+  <script src="/javascripts/feed.js"></script>
+</body>
+</html>

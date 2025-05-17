@@ -1,0 +1,190 @@
+/* General Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Arial", sans-serif;
+	background-color: #ffffff; /* Light background */
+}
+
+body {
+	background-color: #ffffff;
+	color: #000000; /* Black text */
+	padding: 0;
+	font-family: 'Arial', sans-serif;
+}
+
+/* Container for posts */
+.container {
+	padding-top: 5vh;
+	width: 100%;
+	margin: 0 auto;
+	column-count: 6;
+	column-gap: 20px;
+}
+
+/* Each post box */
+.container .box {
+	width: 100%;
+	margin-bottom: 20px;
+	break-inside: avoid;
+	border-radius: 15px;
+	overflow: hidden;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	background-color: #f9f9f9; /* Light gray background */
+	transition: transform 0.3s ease-in-out;
+	position: relative;
+}
+
+/* Hover effect for box */
+.container .box:hover {
+	transform: scale(1.05);
+}
+
+/* Image style */
+.container .box img {
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	transition: opacity 0.3s ease;
+}
+
+.container .box:hover img {
+	opacity: 0.9;
+}
+
+/* Caption styling */
+.caption {
+	padding: 10px;
+	font-size: 14px;
+	line-height: 1.5;
+	color: #333333; /* Dark gray text */
+}
+
+/* Save Button Styling (Initially Hidden) */
+.save-btn {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	opacity: 0;
+	background-color: transparent;
+	transition: opacity 0.3s ease-in-out;
+}
+
+/* Improved Save Button */
+.save-btn .save-button {
+	background-color: #E60023;
+	color: #fff;
+	border: none;
+	padding: 8px 16px;
+	font-size: 14px;
+	border-radius: 24px;
+	box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.save-btn .save-button:hover {
+	background-color: #BF001E;
+	transform: scale(1.05);
+}
+
+.save-btn .save-button:focus {
+	outline: none;
+	box-shadow: 0 0 0 3px rgba(230,0,35,0.4);
+}
+
+/* Show the save button on hover */
+.container .box:hover .save-btn {
+	opacity: 1;
+}
+
+/* Board Modal (Initially Hidden) */
+.board-modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+	justify-content: center;
+	align-items: center;
+	color: #000; /* Black text */
+}
+
+.board-modal .modal-content {
+	background-color: #ffffff; /* White modal */
+	padding: 20px;
+	border-radius: 8px;
+	width: 300px;
+	text-align: center;
+}
+
+.board-modal .boards-list {
+	list-style-type: none;
+	padding: 0;
+	margin-top: 20px;
+}
+
+.board-modal .boards-list li {
+	margin-bottom: 10px;
+	cursor: pointer;
+	background-color: #f1f1f1; /* Light background */
+	padding: 8px;
+	border-radius: 5px;
+	color: #000;
+}
+
+.board-modal .boards-list li:hover {
+	background-color: #E60023;
+	color: #fff;
+}
+
+.board-modal .close-modal {
+	margin-top: 20px;
+	background-color: #E60023;
+	color: #fff;
+	padding: 10px 16px;
+	border: none;
+	cursor: pointer;
+	border-radius: 24px;
+	font-weight: bold;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.board-modal .close-modal:hover {
+	background-color: #BF001E;
+	transform: scale(1.05);
+}
+
+/* Responsive Styles */
+@media (max-width: 1427px) {
+	.container {
+		column-count: 5;
+	}
+}
+
+@media (max-width: 1200px) {
+	.container {
+		column-count: 4;
+	}
+}
+
+@media (max-width: 1000px) {
+	.container {
+		column-count: 3;
+	}
+}
+
+@media (max-width: 786px) {
+	.container {
+		column-count: 2;
+	}
+}
+
+@media (max-width: 480px) {
+	.container {
+		column-count: 1;
+	}
+}
